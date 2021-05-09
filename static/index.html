@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Memory Card Game</title>
+  <link rel="stylesheet" href="default.css">
+</head>
+
+<main role = main>
+  <h1 class = "page-title">memory game</h1>
+  <div id= "game-over-text" class= "overlay-text">
+    game over
+    <span class= "overlay-text-small">click to go to menu</span>
+  </div>
+  <div id="victory-text" class="overlay-text">
+    victory!
+    <form id="victory-form"
+      action="/insert"
+      enctype="application/x-www-form-urlencoded"
+      method="POST">
+
+        <span id="time-remaining-victory"></span>
+        <input type="hidden" id="user_time" name="user_time"> 
+
+        <label for="user_name">Type your name here:</label><br>
+        <input type="text" id="user_name" name="user_name"><br>
+
+        <input type="submit" value="Send data">
+    </form>
+  </div>  
+
+  <div id = mainmenu class= "menu"> 
+
+    <h3>This game will test your memory :)</h3>
+    <h3>To win, find the pairs of cards before the time is over!</h3>
+    <div id="score-list"></div>
+    
+    <button id = "easybutton" class="button" title="easy">EASY GAME</button>
+    <button id = "hardbutton" class="button" title="hard">HARD GAME</button>
+    <button id = "expertbutton" class="button" title="expert">EXPERT GAME</button>
+
+    <p>Choose the difficulty by clicking above or pressing 1, 2 or 3.</p>
+    <p>If you win the game, your name and time will appear in the score table!</p>
+    <p>To enjoy the full experience, make sure your browser allows music.</p>
+
+  </div>
+
+  <div role = "container" id= "container" class = "game-container">
+    <div class = "instructions">
+      <p>Flip the cards by clicking with your mouse or</p>
+      <p>select the card with the keyboard arrows and flip it by pressing enter.</p>
+    </div>
+    <div class = "game-info-container">
+      <div class = "game-info">
+        TIME <span id = "time-remaining">100</span>
+      </div>
+    <div class = "game-info">
+        FLIPS <span id = "flips">0</span>
+      </div>
+    </div>
+    
+    <div id = "board" class = "board">
+    </div>
+
+  </div>
+
+  <script src="main.js" type = "module"></script>
+
+</main>
+
+</html>
